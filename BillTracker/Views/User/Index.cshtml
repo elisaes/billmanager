@@ -1,0 +1,62 @@
+﻿@model IEnumerable<BillTracker.Models.BillModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="text-center" style="padding-top: 20px">
+    <h1>Welcome to the Billing Page</h1>
+    <h4>Please remember to pay your bills!</h4>
+    <p><b>or else...</b></p>
+    <br />
+</div>
+<p>
+    @Html.ActionLink("Add a new bill", "Create", null, new { @class = "btn btn-info btn-rounded btn-sm" })
+</p>
+<table class="table table-borderless table-hover" style="background-color:white">
+    <tr>
+@*        <th scope="col">
+            @Html.DisplayNameFor(model => model.User.Email)
+        </th>*@
+        <th scope="col">
+            @Html.DisplayNameFor(model => model.BillName)
+        </th>
+        <th scope="col">
+            @Html.DisplayNameFor(model => model.BillCompany)
+        </th>
+        <th scope="col">
+            @Html.DisplayNameFor(model => model.BillDate)
+        </th>
+        <th scope="col">
+            @Html.DisplayNameFor(model => model.BillPrice)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+@*            <td>
+                @Html.DisplayFor(modelItem => item.User.Email)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.BillName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillCompany)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillPrice)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BillId }, new { @class = "btn btn-info btn-rounded btn-sm" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BillId }, new { @class = "btn btn-info btn-rounded btn-sm" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BillId }, new { @class = "btn btn-info btn-rounded btn-sm" })
+            </td>
+        </tr>
+    }
+
+</table>

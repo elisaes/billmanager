@@ -1,0 +1,67 @@
+﻿@model BillTracker.Models.BillModels
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="text-center">
+    <h2>Deleting Bill</h2>
+
+    <h3>Are you sure you want to delete this?</h3>
+</div>
+<hr />
+<div style="padding-left:30%;background-color:lavender">
+
+    <dl class="dl-horizontal" style="padding:10px">
+        @*        <dt>
+                @Html.DisplayNameFor(model => model.User.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.User.Email)
+            </dd>*@
+
+        <dt style="margin-bottom:10px">
+            @Html.DisplayNameFor(model => model.BillName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillName)
+        </dd>
+
+        <dt style="margin-bottom:10px">
+            @Html.DisplayNameFor(model => model.BillCompany)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillCompany)
+        </dd>
+
+        <dt style="margin-bottom:10px">
+            @Html.DisplayNameFor(model => model.BillDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillDate)
+        </dd>
+
+        <dt style="margin-bottom:10px">
+            @Html.DisplayNameFor(model => model.BillPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillPrice)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-info btn-rounded btn-sm" /> |
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info btn-rounded btn-sm" })
+        </div>
+    }
+</div>

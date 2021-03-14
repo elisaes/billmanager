@@ -1,0 +1,59 @@
+﻿@model BillTracker.Models.BillModels
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="text-center">Full details of the bill</h2>
+
+<hr />
+<div style="padding-left:30%;background-color:lavender">
+
+    <dl class="dl-horizontal" style="padding:10px">
+        <dt style="margin-bottom:10px">
+            @Html.DisplayNameFor(model => model.User.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Email)
+        </dd>
+
+        <dt style="margin-bottom:10px">
+            @Html.DisplayNameFor(model => model.BillName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillName)
+        </dd>
+
+        <dt style="margin-bottom:10px">
+            @Html.DisplayNameFor(model => model.BillCompany)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillCompany)
+        </dd>
+
+        <dt style="margin-bottom:10px">
+            @Html.DisplayNameFor(model => model.BillDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillDate)
+        </dd>
+
+        <dt style="margin-bottom:10px">
+            @Html.DisplayNameFor(model => model.BillPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillPrice)
+        </dd>
+
+    </dl>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.BillId }, new { @class = "btn btn-info btn-rounded btn-sm" }) |
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info btn-rounded btn-sm" })
+    </p>
+</div>
+
